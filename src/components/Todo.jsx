@@ -1,7 +1,9 @@
-function Todo(){
+import './Todo.css'
+function Todo( {title}){
+  console.log(title)
     return (
-    <div>
-      <h2> Finish FrontendSimplified</h2>
+    <div className="todo">
+      <h2>{ title }</h2>
       <button>Delete</button>
      </div>
     )
