@@ -1,12 +1,17 @@
 import './Todo.css'
-function Todo( {title}){
+function Todo( {title, paragraph}){
   console.log(title)
-    return (
-    <div className="todo">
-      <h2>{ title }</h2>
-      <button>Delete</button>
-     </div>
-    )
+function deleteTodo(id){
+  console.log('deleteTodo()')
 }
 
-export default Todo
+    return (
+    <div className="todo">
+      <h2>{title}</h2>
+      <p>{paragraph}</p>
+      <button onClick={() => deleteTodo(1)}>Delete</button>
+     </div>
+    );
+}
+
+export default Todo;
