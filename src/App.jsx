@@ -15,7 +15,7 @@ useState(false)
         <input type="text" onChange={(event) => {
           console.log(event.target.value)
         }} />
-        <button>Add t</button>
+        <button>Add </button>
       </div>
       <div className="todo__wrapper">
         <Todo title ="Finish Frontend Simplfied"/>
