@@ -20,7 +20,7 @@ useState(false)
       <div className="todo__wrapper">
         <Todo title ="Finish Frontend Simplfied"/>
         <Todo title ="Finish Interview section"/>
-        <Todo title ="Land a 100 Job"/>
+        <Todo title ="Land a 100k Job"/>
       </div>
 {  false &&  <Modal title="Confirm Delete?"/> }    
   </>
