@@ -2,17 +2,21 @@ import './App.css';
 import Todo from './components/Todo.jsx';
 import Titles from './components/Titles.jsx';
 import Modal from './components/Modal.jsx';
-import React, {useState} from 'react';
+import Counter from "./components/Counter.jsx"
 import React, { useState } from 'react';
 
 function App() {
- 
+  const [showModal, setShowModal] = useState(false)
+
+  function onTodoDelete() {
+    console.log('onTodoDelete')
+  }
   
  
  
  
- return <Counter />
- const [showModal, setShowModal] = useState(false)
+//  return <Counter />
+//  const [showModal, setShowModal] = useState(false)
 
  
  return (
@@ -25,9 +29,9 @@ function App() {
         <button onClick={() => setShowModal(true)}>Ad todo</button>
       </div>
       <div className="todo__wrapper">
-        <Todo title ="Finish Frontend Simplfied"/>
-        <Todo title ="Finish Interview section"/>
-        <Todo title ="Land a 100k Jobs"/>
+        <Todo onTodoDelete={onTodoDelete} title ="Finish Frontend Simplfied"/>
+        <Todo onTodoDelete={onTodoDelete} title ="Finish Interview section"/>
+        <Todo onTodoDelete={onTodoDelete} title ="Land a 100k Jobs"/>
       </div>
 {showModal  &&  <Modal title="Confirm Delete?"/> }    
   </div>

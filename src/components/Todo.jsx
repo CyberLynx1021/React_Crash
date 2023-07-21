@@ -1,5 +1,5 @@
 import './Todo.css'
-function Todo( {title, paragraph}){
+function Todo( {title, onTodoDelete}){
   console.log(title)
 function deleteTodo(id){
   console.log('deleteTodo()')
