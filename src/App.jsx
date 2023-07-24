@@ -10,7 +10,6 @@ function App() {
 
   function onTodoDelete() {
     setShowModal(true)
-    console.log('onTooDeete')
   }
   
  function cancelModal(){
@@ -20,12 +19,19 @@ function App() {
  function confirmModal(){
   setShowModal(true)
  }
- 
+
+ useEffect (()=>{
+  console.log('ONLY on mount')
+},[])
+
 useEffect (()=>{
-  console.log('on mount')
+  console.log(`on mount AND on ${showModal} change`)
 }, [showModal])
 
- 
+useEffect (()=>{
+  console.log(`EVER render`)
+})
+
  return (
     <div>
       <Titles />
