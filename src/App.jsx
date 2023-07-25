@@ -1,59 +1,17 @@
 import './App.css';
-import Todo from './components/Todo.jsx';
-import Titles from './components/Titles.jsx';
-import Modal from './components/Modal.jsx';
-import Counter from "./components/Counter.jsx"
-import React, { useState, useEffect } from 'react';
-
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './pages/Home.jsx'
 function App() {
-  const [showModal, setShowModal] = useState(false)
-
-  function onTodoDelete() {
-    setShowModal(true)
-  }
-  
- function cancelModal(){
-  setShowModal(true)
- }
-
- function confirmModal(){
-  setShowModal(true)
- }
-
- useEffect (()=>{
-  console.log('ONLY on mount')
-},[])
-
-useEffect (()=>{
-  console.log(`on mount AND on ${showModal} change`)
-}, [showModal])
-
-useEffect (()=>{
-  console.log(`EVER render`)
-})
-
  return (
     <div>
-      <Titles />
-      <div>
-        <input type="text" onChange={(event) => {
-          console.log(event.target.value)
-        }} />
-        <button onClick={() => setShowModal(true)}>Ad todo</button>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+
+      </Routes>
+      </Router>
       </div>
-      <div className="todo__wrapper">
-        <Todo onTodoDelete={onTodoDelete} title ="Finish Frontend Simplfied"/>
-        <Todo onTodoDelete={onTodoDelete} title ="Finish Interview section"/>
-        <Todo onTodoDelete={onTodoDelete} title ="Land a 100k Jobs"/>
-      </div>
-{showModal  && (
- <Modal 
-cancelModal={cancelModal}
-confirmModal={confirmModal} 
-title="Confirm Delete?"
-/> 
-)}    
-  </div>
+
   );
 }
 
