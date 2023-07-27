@@ -17,12 +17,12 @@ useEffect(() => {
     }, 500);
 }, []);
 
-const pixels = "2px";
+const pixels = "3px";
 
 return (
     <div>
-    {users.map(() => {
-    <User />
+    {users.map((user) => {
+    <User id={user.id} name={user.name} email={user.email} username={user.username}/>
     })}  
 
 </div>
